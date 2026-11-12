@@ -321,33 +321,43 @@ header.h{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);backgroun
  .news{scroll-behavior:auto}
 }
 
-/* hero con mapa (el mapa va detrás del titular) */
-.mh{background:radial-gradient(1000px 520px at 50% 85%,#0b3a86 0%,#052a66 42%,#021a42 100%);color:#fff;position:relative;overflow:hidden;padding:clamp(28px,4vw,48px) 0 0}
-.mh-head{text-align:center;position:relative;z-index:4;text-shadow:0 2px 26px rgba(2,26,66,.85)}
-.mh h1{font-size:clamp(38px,6.2vw,88px);line-height:.95;letter-spacing:-.04em;font-weight:800;color:#fff}
+/* hero C: mapa completo, radar desde Maracay y titular sobre la mitad sur */
+.mh{position:relative;overflow:hidden;color:#fff;height:clamp(640px,49vw,700px);background:radial-gradient(900px 560px at 50% 40%,#0b3a86 0,#052a66 42%,#021a42 100%)}
+.mh-map{position:absolute;left:50%;top:10px;width:min(770px,60%);transform:translateX(-50%);aspect-ratio:980/830;z-index:1;-webkit-mask-image:linear-gradient(#000 0,#000 46%,transparent 92%);mask-image:linear-gradient(#000 0,#000 46%,transparent 92%)}
+.mh-map img,.mh-map svg{position:absolute;left:0;top:0;width:100%;height:100%;display:block}.mh-map svg{overflow:visible}
+@property --r{syntax:"<length>";inherits:false;initial-value:0px}
+.mh-map .wave{--r:0px;--rmax:800px;--band:140px;pointer-events:none;animation:radar 5.5s cubic-bezier(.25,.1,.3,1) infinite;-webkit-mask-image:radial-gradient(circle at 42.9% 18.1%,transparent calc(var(--r) - var(--band)),#000 calc(var(--r) - 14px),transparent var(--r));mask-image:radial-gradient(circle at 42.9% 18.1%,transparent calc(var(--r) - var(--band)),#000 calc(var(--r) - 14px),transparent var(--r))}
+@keyframes radar{0%{--r:0px}80%,100%{--r:var(--rmax)}}
+.mh-copy{position:absolute;left:0;right:0;top:clamp(250px,22vw,310px);text-align:center;z-index:4;text-shadow:0 2px 28px rgba(2,26,66,.9)}
+.mh h1{font-size:clamp(40px,6.2vw,88px);line-height:.95;letter-spacing:-.04em;font-weight:800;color:#fff}
 .mh h1 span{display:block;color:#8ba6d8}
-.mh .lead{color:#d2dcef;margin:18px auto 0;max-width:56ch}
+.mh .lead{color:#d2dcef;margin:16px auto 0;max-width:54ch}
 .mh .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:24px}
 .mh .btn{color:var(--navy)}.mh .btn:hover{color:var(--navy)}
 .btn.g{background:transparent;color:#fff!important;box-shadow:inset 0 0 0 2px rgba(255,255,255,.5)}.btn.g:hover{background:rgba(255,255,255,.12);box-shadow:inset 0 0 0 2px #fff}
-.mh-scene{position:relative;margin-top:-44px;height:min(520px,44vw);perspective:1400px;z-index:1;-webkit-mask-image:linear-gradient(transparent 0,rgba(0,0,0,.7) 7%,#000 22%);mask-image:linear-gradient(transparent 0,rgba(0,0,0,.7) 7%,#000 22%)}
-.mh-plane{position:absolute;left:50%;top:0;width:min(1100px,100%);aspect-ratio:980/830;transform:translateX(-50%) rotateX(54deg);transform-origin:50% 0}
-.mh-plane .dots,.mh-plane .ov{position:absolute;inset:0;width:100%;height:100%}.mh-plane .ov{overflow:visible}
-.mh-fade{display:none}
 .rt{fill:none;stroke:#ff4a2d;stroke-width:3;stroke-dasharray:8 10;animation:dash 1.2s linear infinite;opacity:.95}
 .pr{transform-box:fill-box;transform-origin:center;animation:ping 2.4s ease-out infinite}.pr.big{animation-duration:1.8s}
 .lb text{fill:#dbe4f5;font:600 17px var(--bf)}.hub{fill:#fff;font:800 26px var(--hf);letter-spacing:.06em}
-.chip{position:absolute;z-index:5;background:#fff;color:var(--navy);border-radius:18px;padding:12px 18px;box-shadow:0 22px 50px rgba(0,0,0,.4);display:flex;gap:12px;align-items:center;font-weight:600;font-size:14px;line-height:1.25;animation:float 7s ease-in-out infinite;text-shadow:none}
+.mh-chips{position:absolute;inset:0;z-index:5;pointer-events:none}
+.chip{position:absolute;background:#fff;color:var(--navy);border-radius:18px;padding:12px 18px;box-shadow:0 22px 50px rgba(0,0,0,.4);display:flex;gap:12px;align-items:center;font-weight:600;font-size:14px;line-height:1.25;animation:float 7s ease-in-out infinite;text-shadow:none}
 .chip b{font:800 34px var(--hf);color:#d93216;line-height:1}.chip i{width:12px;height:12px;border-radius:50%;background:var(--teal);flex:none}
-.chip.k1{left:4%;bottom:12%}.chip.k2{right:4%;bottom:34%;animation-delay:-2s}.chip.k3{right:4%;bottom:8%;animation-delay:-4s}
+.chip.k1{left:5%;top:190px}.chip.k2{right:5%;top:140px;animation-delay:-2s}.chip.k3{display:none}
 .band{background:var(--coral);color:var(--navy);overflow:hidden;white-space:nowrap;padding:18px 0;transform:rotate(-1.2deg);margin:-14px -20px 0;position:relative;z-index:6}
 .mq{display:inline-flex;gap:34px;align-items:center;animation:marq 34s linear infinite;font:800 30px var(--hf);letter-spacing:-.02em}
 .mq i{width:14px;height:14px;border-radius:50%;background:var(--navy);display:inline-block}
-.mh.off .rt,.mh.off .pr,.mh.off .chip,.mh.off~.band .mq{animation-play-state:paused}
+.mh.off .rt,.mh.off .pr,.mh.off .chip,.mh.off .wave,.mh.off~.band-w .mq{animation-play-state:paused}
 @keyframes dash{to{stroke-dashoffset:-36}}@keyframes ping{0%{transform:scale(1);opacity:.9}100%{transform:scale(3.6);opacity:0}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@keyframes marq{to{transform:translateX(-50%)}}
-@media(max-width:900px){.mh-scene{margin-top:-18px;height:92vw}.mh-plane{width:150%;transform:translateX(-50%) rotateX(46deg)}.lb text{font-size:26px}.hub{font-size:34px}.chip.k2,.chip.k3{display:none}.chip.k1{left:3%;bottom:6%}.mq{font-size:24px}}
-@media(max-width:560px){.chip{display:none}.lb{display:none}.hub{font-size:46px}.mh .lead{font-size:17px}.mh-plane{width:170%}}
+@media(max-width:900px){
+ .mh{height:clamp(720px,190vw,800px)}
+ .mh-map{top:6px;width:100%}
+ .mh-map .wave{--rmax:420px;--band:80px}
+ .mh-copy{top:clamp(210px,56vw,300px)}.mh .lead{font-size:17px;max-width:34ch}
+ .mh-chips{inset:auto 0 22px 0;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 20px 14px;pointer-events:auto;scrollbar-width:none}.mh-chips::-webkit-scrollbar{display:none}
+ .chip{position:static;flex:none;scroll-snap-align:start;animation:none;box-shadow:0 12px 28px rgba(0,0,0,.35)}.chip.k3{display:flex}
+ .lb{display:none}.hub{font-size:44px}.mq{font-size:24px}
+}
+@media(prefers-reduced-motion:reduce){.mh-map .wave{animation:none;--r:0px}}
 /* menos aire entre secciones */
 section{padding:clamp(34px,4.2vw,58px) 0}
 .sh{margin-bottom:26px;gap:10px}
