@@ -5,7 +5,7 @@ if(B)B.addEventListener('click',function(){var o=N.classList.toggle('o');B.setAt
 if(N)N.addEventListener('click',function(e){if(e.target.tagName==='A'){N.classList.remove('o');B.setAttribute('aria-expanded',false)}});
 /* images: direct -> weserv proxy -> branded gradient */
 document.querySelectorAll('.ph[data-k]').forEach(function(p){
- var u=window.IMG&&IMG[p.dataset.k];if(!u)return;
+ var u=typeof IMG!=='undefined'&&IMG[p.dataset.k];if(!u)return;
  var i=new Image();i.alt=p.dataset.alt||'';i.decoding='async';var t=0;
  i.onload=function(){p.classList.add('ok')};
  i.onerror=function(){if(t++===0)i.src='https://images.weserv.nl/?w=900&q=80&url='+encodeURIComponent(u);else i.remove()};
