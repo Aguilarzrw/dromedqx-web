@@ -355,3 +355,15 @@ section{padding:clamp(34px,4.2vw,58px) 0}
 .cta-section{padding:clamp(18px,2.6vw,30px) 0 clamp(32px,4.2vw,50px)!important}
 footer{padding:44px 0 22px}.fb{margin-top:30px}
 @media(max-width:600px){section{padding:30px 0}.sh{margin-bottom:20px}}
+
+/* sin desborde horizontal + scroll con la identidad de la marca */
+.band-w{overflow:hidden;position:relative;z-index:6;margin-top:-14px;padding:14px 0 6px}.band-w .band{margin:0 -20px}
+html{overflow-x:hidden;scrollbar-width:thin;scrollbar-color:#ff4a2d #eaeef6}
+@supports(overflow:clip){html,body{overflow-x:clip}}
+::-webkit-scrollbar{width:12px;height:12px}
+::-webkit-scrollbar-track{background:#eaeef6}
+::-webkit-scrollbar-thumb{background:linear-gradient(#ff4a2d,#f46732);border-radius:99px;border:3px solid #eaeef6}
+::-webkit-scrollbar-thumb:hover{background:var(--navy)}
+header.h:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3px;background:linear-gradient(90deg,var(--coral),var(--orange),var(--teal));transform:scaleX(0);transform-origin:0 50%;animation:sp linear both;animation-timeline:scroll(root)}
+@keyframes sp{to{transform:scaleX(1)}}
+@media(prefers-reduced-motion:reduce){header.h:after{animation:none}}
