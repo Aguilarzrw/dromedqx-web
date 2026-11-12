@@ -407,3 +407,35 @@ header.h:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3p
 
 /* la web tiene un solo diseño: evita el modo oscuro automático de algunos navegadores (p. ej. Xiaomi) */
 :root{color-scheme:only light}
+
+/* chips del hero: cristal oscuro con icono */
+.chip{background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.06));border:1px solid rgba(255,255,255,.22);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);color:#fff;border-radius:20px;padding:12px 18px 12px 12px;gap:12px;box-shadow:0 18px 40px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.18)}
+.chip .ci{width:42px;height:42px;border-radius:13px;flex:none;display:grid;place-items:center;background:linear-gradient(135deg,#ff6a3d,#e5391c);box-shadow:0 6px 16px rgba(255,90,50,.45)}
+.chip .ci.t{background:linear-gradient(135deg,#2fc4b8,#12857c);box-shadow:0 6px 16px rgba(30,180,165,.4)}
+.chip .ci.b{background:linear-gradient(135deg,#4d7dff,#2a4fd0);box-shadow:0 6px 16px rgba(60,100,230,.4)}
+.chip .ci svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.chip span{display:flex;flex-direction:column;gap:3px;text-align:left}
+.chip small{font:600 11.5px/1 var(--bf,inherit);color:rgba(255,255,255,.66);letter-spacing:.02em}
+.chip span b{font:700 15px/1.2 var(--hf);color:#fff;letter-spacing:-.01em}
+@media(max-width:900px){
+ .mh-chips{inset:auto 0 26px 0;padding:6px 20px 16px;scroll-padding:0 20px;gap:12px}
+ .mh-chips::after{content:"";flex:0 0 8px}
+ .chip{box-shadow:0 14px 30px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.18)}
+ .chip.k3 span b{max-width:170px}
+}
+
+/* cifras: tarjetas con icono, alineadas */
+.stats-section .stats{background:transparent;box-shadow:none;border:0;border-radius:0;overflow:visible;gap:16px}
+.stats-section .stats>div{position:relative;background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 22px 24px;min-height:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:6px;box-shadow:0 14px 34px rgba(10,35,90,.07);overflow:hidden}
+.stats-section .stats>div:before{content:"";position:absolute;left:0;top:0;height:3px;width:100%;background:linear-gradient(90deg,#ff5a32,#ff8a5c)}
+.stats-section .stats>div:nth-child(2):before{background:linear-gradient(90deg,#12a89c,#5ad6cb)}
+.stats-section .stats>div:nth-child(3):before{background:linear-gradient(90deg,#2a4fd0,#6c93ff)}
+.stats-section .stats>div:nth-child(4):before{background:linear-gradient(90deg,#ff5a32,#ff8a5c)}
+.stats .si{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:#fff1ec;margin-bottom:8px}
+.stats .si.t{background:#e3f7f5}.stats .si.b{background:#e8eeff}
+.stats .si svg{width:21px;height:21px;fill:none;stroke:#e5391c;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.stats .si.t svg{stroke:#12857c}.stats .si.b svg{stroke:#2a4fd0}
+.stats-section .stats b{font-size:clamp(28px,3vw,42px)}
+.stats-section .stats span{font-size:14px;line-height:1.4}
+@media(max-width:900px){.stats-section .stats{gap:12px}.stats-section .stats>div{padding:18px 16px 20px;min-height:150px}.stats .si{width:36px;height:36px;margin-bottom:6px}.stats-section .stats b{font-size:27px}}
+@media(max-width:900px){.mh{height:clamp(676px,176vw,780px)}}
