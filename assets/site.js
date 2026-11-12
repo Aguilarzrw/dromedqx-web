@@ -32,6 +32,33 @@ if(burger&&nav){
   });
 }
 
+/* Carrusel de novedades: control manual, swipe nativo y foco accesible. */
+document.querySelectorAll("[data-carousel]").forEach(function(button){
+  var track=document.getElementById(button.getAttribute("data-carousel"));
+  if(!track)return;
+  button.addEventListener("click",function(){
+    var card=track.querySelector("article");
+    var gap=parseFloat(getComputedStyle(track).gap)||0;
+    var step=card?card.getBoundingClientRect().width+gap:track.clientWidth*.8;
+    track.scrollBy({left:step*Number(button.getAttribute("data-direction")||1),behavior:reducedMotion?"auto":"smooth"});
+  });
+});
+
+/* Inclinación 3D muy ligera solo con puntero preciso; nunca en pantallas táctiles. */
+var canTilt=window.matchMedia&&window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+var motionOff=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(canTilt&&!motionOff){
+  document.querySelectorAll(".hero .mosaic>.ph").forEach(function(card){
+    card.addEventListener("pointermove",function(event){
+      var rect=card.getBoundingClientRect();
+      var x=(event.clientX-rect.left)/rect.width-.5;
+      var y=(event.clientY-rect.top)/rect.height-.5;
+      card.style.transform="perspective(900px) rotateX("+(-y*5).toFixed(2)+"deg) rotateY("+(x*6).toFixed(2)+"deg) translateY(-2px)";
+    });
+    card.addEventListener("pointerleave",function(){card.style.transform=""});
+  });
+}
+
 /* Animaciones progresivas: el contenido permanece visible si no hay soporte. */
 var revealItems=document.querySelectorAll(".in");
 if("IntersectionObserver" in window){
