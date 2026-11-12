@@ -3,14 +3,6 @@ var H=document.querySelector('header.h'),B=document.querySelector('.burger'),N=d
 addEventListener('scroll',function(){H&&H.classList.toggle('s',scrollY>30)},{passive:true});
 if(B)B.addEventListener('click',function(){var o=N.classList.toggle('o');B.setAttribute('aria-expanded',o)});
 if(N)N.addEventListener('click',function(e){if(e.target.tagName==='A'){N.classList.remove('o');B.setAttribute('aria-expanded',false)}});
-/* images: direct -> weserv proxy -> branded gradient */
-document.querySelectorAll('.ph[data-k]').forEach(function(p){
- var u=typeof IMG!=='undefined'&&IMG[p.dataset.k];if(!u)return;
- var i=new Image();i.alt=p.dataset.alt||'';i.decoding='async';var t=0;
- i.onload=function(){p.classList.add('ok')};
- i.onerror=function(){if(t++===0)i.src='https://images.weserv.nl/?w=900&q=80&url='+encodeURIComponent(u);else i.remove()};
- i.src=u;p.appendChild(i);
-});
 /* reveals */
 var els=document.querySelectorAll('.in');
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)})}else els.forEach(function(e){e.classList.add('v')});

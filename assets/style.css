@@ -34,11 +34,11 @@ nav.m .btn{padding:10px 20px;margin-left:8px;color:#fff;font-size:15px}nav.m .bt
 .burger span{top:21px}.burger span:before{top:-8px;left:0}.burger span:after{top:8px;left:0}
 .burger[aria-expanded=true] span{background:transparent}.burger[aria-expanded=true] span:before{top:0;transform:rotate(45deg)}.burger[aria-expanded=true] span:after{top:0;transform:rotate(-45deg)}
 /* sections */
-section{padding:clamp(64px,9vw,120px) 0}.tint{background:var(--mist)}.dark{background:var(--navy);color:#cfd8ea}.dark h2,.dark h3{color:#fff}
+section{padding:clamp(64px,9vw,120px) 0}main section+section{content-visibility:auto;contain-intrinsic-size:auto 600px}.tint{background:var(--mist)}.dark{background:var(--navy);color:#cfd8ea}.dark h2,.dark h3{color:#fff}
 .sh{margin-bottom:48px;display:grid;gap:14px}.tag{font-weight:700;color:var(--coral);font-size:15px}
 /* image placeholder */
 .ph{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy),#2c3254 55%,var(--teal));border-radius:20px}
-.ph img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s,transform 1.2s}.ph.ok img{opacity:1}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s,transform 1.2s}.ph.ok img{opacity:1}
 .ph:hover img{transform:scale(1.04)}
 .ph:before{content:"";position:absolute;width:55%;aspect-ratio:1;border-radius:50%;border:26px solid rgba(255,255,255,.07);right:-12%;bottom:-18%}
 /* hero */
@@ -47,7 +47,7 @@ section{padding:clamp(64px,9vw,120px) 0}.tint{background:var(--mist)}.dark{backg
 .hero h1{margin:16px 0 22px}.hero h1 em{font-style:normal;color:var(--coral)}
 .hero .ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
 .orbs{position:absolute;inset:0;pointer-events:none;z-index:-1}
-.orbs i{position:absolute;border-radius:50%;filter:blur(2px);animation:drift 16s ease-in-out infinite alternate}
+.orbs i{position:absolute;border-radius:50%;will-change:transform;animation:drift 16s ease-in-out infinite alternate}
 .orbs i:nth-child(1){width:420px;height:420px;background:rgba(255,74,45,.10);right:-90px;top:-100px}
 .orbs i:nth-child(2){width:280px;height:280px;background:rgba(48,178,170,.14);right:26%;bottom:-120px;animation-delay:-5s}
 .orbs i:nth-child(3){width:200px;height:200px;background:rgba(3,38,92,.07);left:-60px;top:30%;animation-delay:-9s}
