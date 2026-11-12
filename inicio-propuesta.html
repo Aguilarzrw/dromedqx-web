@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DromedQX | Abastecimiento farmacéutico</title>
+<meta name="description" content="DromedQX, droguería y distribuidora farmacéutica en Maracay. Soluciones de abastecimiento y despachos a nivel nacional.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#03265c">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+/* Propuesta visual alternativa para Inicio. Los estilos quedan aislados de las demás páginas. */
+.home-v2{--hv-ink:#10213f;--hv-muted:#64718a;--hv-navy:#03265c;--hv-coral:#ff4a2d;--hv-teal:#30b2aa;overflow:hidden}
+.home-v2 .wrap{max-width:1240px}
+.home-v2 .hero-v2{position:relative;padding:clamp(54px,7vw,94px) 0 54px;background:linear-gradient(125deg,#f8fafc 0%,#fff 50%,#edf6f7 100%)}
+.home-v2 .hero-v2:before{content:"";position:absolute;width:560px;height:560px;border:1px solid rgba(3,38,92,.08);border-radius:50%;right:-180px;top:-250px;box-shadow:0 0 0 52px rgba(48,178,170,.035),0 0 0 110px rgba(3,38,92,.025)}
+.home-v2 .hero-grid{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(36px,6vw,86px);align-items:center}
+.home-v2 .eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--hv-coral);font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.home-v2 .eyebrow:before{content:"";width:26px;height:2px;background:var(--hv-coral)}
+.home-v2 .hero-copy h1{font:700 clamp(42px,5.2vw,72px)/1.02 var(--hf);letter-spacing:-.045em;color:var(--hv-navy);margin:22px 0}
+.home-v2 .hero-copy h1 span{color:var(--hv-coral)}
+.home-v2 .hero-copy>p{max-width:54ch;font-size:clamp(17px,1.5vw,20px);line-height:1.75;color:var(--hv-muted)}
+.home-v2 .hero-actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
+.home-v2 .hero-actions .btn{padding:15px 25px}
+.home-v2 .hero-visual{position:relative;min-width:0;padding:0 0 34px 28px}
+.home-v2 .hero-photo{height:clamp(380px,42vw,530px);position:relative;overflow:hidden;border-radius:28px 120px 28px 28px;background:#dce8ee;box-shadow:0 30px 70px rgba(3,38,92,.19)}
+.home-v2 .hero-photo img{width:100%;height:100%;object-fit:cover}
+.home-v2 .hero-photo:after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(3,24,55,.36))}
+.home-v2 .visual-note{position:absolute;left:0;bottom:0;z-index:2;background:#fff;border-radius:18px;padding:18px 22px;box-shadow:0 16px 42px rgba(3,38,92,.16);display:flex;align-items:center;gap:14px;max-width:265px}
+.home-v2 .visual-note .note-icon{width:44px;height:44px;border-radius:14px;background:#e8f5f4;color:#138a82;display:grid;place-items:center;font-size:22px;flex:none}
+.home-v2 .visual-note b{display:block;color:var(--hv-navy);font:700 16px var(--hf)}
+.home-v2 .visual-note small{display:block;color:var(--hv-muted);font-size:13px;line-height:1.35;margin-top:3px}
+.home-v2 .visual-index{position:absolute;right:-16px;top:34px;z-index:2;writing-mode:vertical-rl;letter-spacing:.18em;font-size:11px;font-weight:700;color:#fff;background:var(--hv-navy);padding:15px 10px;border-radius:30px}
+.home-v2 .trust-strip{padding:0 0 58px;background:linear-gradient(180deg,#edf6f7 0,#fff 100%)}
+.home-v2 .trust-inner{display:grid;grid-template-columns:repeat(3,1fr);background:#fff;border:1px solid #e4eaf0;border-radius:20px;box-shadow:0 18px 50px rgba(3,38,92,.07);overflow:hidden}
+.home-v2 .trust-item{padding:25px 30px;display:flex;gap:15px;align-items:center;border-right:1px solid #e7ecf2}
+.home-v2 .trust-item:last-child{border:0}
+.home-v2 .trust-symbol{width:44px;height:44px;border-radius:14px;background:#fdf0ed;color:var(--hv-coral);display:grid;place-items:center;font-size:21px;flex:none}
+.home-v2 .trust-item:nth-child(2) .trust-symbol{background:#e9f6f5;color:#138a82}
+.home-v2 .trust-item:nth-child(3) .trust-symbol{background:#edf1f8;color:var(--hv-navy)}
+.home-v2 .trust-item b{display:block;color:var(--hv-navy);font:700 17px var(--hf)}
+.home-v2 .trust-item span{display:block;color:var(--hv-muted);font-size:14px;line-height:1.4;margin-top:3px}
+.home-v2 .intro-v2{padding:90px 0}
+.home-v2 .section-heading{max-width:700px;margin-bottom:38px}
+.home-v2 .section-heading .eyebrow{margin-bottom:14px}
+.home-v2 .section-heading h2{font:700 clamp(32px,4vw,50px)/1.08 var(--hf);letter-spacing:-.035em;color:var(--hv-navy);margin-bottom:15px}
+.home-v2 .section-heading p{color:var(--hv-muted);font-size:18px;line-height:1.7}
+.home-v2 .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.home-v2 .service-tile{position:relative;min-height:285px;padding:30px;border:1px solid #e3e9f0;border-radius:22px;background:#fff;display:flex;flex-direction:column;align-items:flex-start;box-shadow:0 8px 24px rgba(3,38,92,.035);transition:transform .25s,box-shadow .25s,border-color .25s;text-decoration:none}
+.home-v2 .service-tile:hover{transform:translateY(-7px);box-shadow:0 22px 44px rgba(3,38,92,.1);border-color:#cbd8e7}
+.home-v2 .service-num{font:700 13px var(--bf);letter-spacing:.1em;color:#9aa7b9}
+.home-v2 .service-icon{width:58px;height:58px;border-radius:18px;background:#fff0ec;color:var(--hv-coral);display:grid;place-items:center;font-size:27px;margin:27px 0 20px}
+.home-v2 .service-tile:nth-child(2) .service-icon{background:#eaf6f5;color:#168b83}
+.home-v2 .service-tile:nth-child(3) .service-icon{background:#edf1f8;color:var(--hv-navy)}
+.home-v2 .service-tile h3{font:700 23px var(--hf);color:var(--hv-navy);margin-bottom:9px}
+.home-v2 .service-tile p{color:var(--hv-muted);font-size:15.5px;line-height:1.65}
+.home-v2 .service-link{margin-top:auto;padding-top:20px;color:var(--hv-coral);font-weight:700;font-size:14px}
+.home-v2 .showcase-v2{padding:88px 0;background:#061d43;color:#fff;position:relative}
+.home-v2 .showcase-v2:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 15%,rgba(48,178,170,.17),transparent 35%);pointer-events:none}
+.home-v2 .showcase-v2 .wrap{position:relative}
+.home-v2 .showcase-v2 .section-heading h2{color:#fff}
+.home-v2 .showcase-v2 .section-heading p{color:#c1cce0}
+.home-v2 .showcase-v2 .eyebrow{color:#ff9a83}
+.home-v2 .slider-shell{position:relative}
+.home-v2 .slide-track{display:grid;grid-auto-columns:minmax(270px,1fr);grid-auto-flow:column;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 20px;overscroll-behavior-x:contain}
+.home-v2 .slide-track::-webkit-scrollbar{display:none}
+.home-v2 .showcase-card{scroll-snap-align:start;min-width:0;background:#102b55;border:1px solid rgba(255,255,255,.12);border-radius:20px;overflow:hidden}
+.home-v2 .showcase-image{height:220px;overflow:hidden;background:#d8e4e9}
+.home-v2 .showcase-image img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.home-v2 .showcase-card:hover .showcase-image img{transform:scale(1.05)}
+.home-v2 .showcase-text{padding:23px}
+.home-v2 .showcase-text small{color:#ff9a83;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.home-v2 .showcase-text h3{font:700 22px var(--hf);color:#fff;margin:9px 0}
+.home-v2 .showcase-text p{color:#c2cde0;font-size:15px;line-height:1.6}
+.home-v2 .slider-controls{display:flex;align-items:center;justify-content:space-between;margin-top:14px}
+.home-v2 .slider-hint{font-size:13px;color:#b9c7dc}
+.home-v2 .slider-buttons{display:flex;gap:10px}
+.home-v2 .slider-buttons button{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.38);background:transparent;color:#fff;font-size:20px;cursor:pointer;transition:background .2s,border-color .2s}
+.home-v2 .slider-buttons button:hover{background:var(--hv-coral);border-color:var(--hv-coral)}
+.home-v2 .about-v2{padding:92px 0}
+.home-v2 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,6vw,82px);align-items:center}
+.home-v2 .about-photo{height:440px;border-radius:24px 24px 100px 24px;overflow:hidden;box-shadow:0 22px 55px rgba(3,38,92,.13);background:#dbe5eb}
+.home-v2 .about-photo img{width:100%;height:100%;object-fit:cover}
+.home-v2 .about-copy h2{font:700 clamp(32px,4vw,48px)/1.08 var(--hf);color:var(--hv-navy);letter-spacing:-.035em;margin:15px 0}
+.home-v2 .about-copy p{color:var(--hv-muted);font-size:17px;line-height:1.75;margin-bottom:22px}
+.home-v2 .about-points{display:grid;gap:12px;margin:0 0 28px;padding:0;list-style:none}
+.home-v2 .about-points li{display:flex;align-items:flex-start;gap:11px;color:var(--hv-ink);font-weight:600}
+.home-v2 .about-points li:before{content:"✓";width:23px;height:23px;flex:none;border-radius:50%;background:#e6f5f3;color:#12857d;display:grid;place-items:center;font-size:13px;font-weight:800}
+.home-v2 .process-v2{padding:82px 0;background:#f4f7fa}
+.home-v2 .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;counter-reset:process}
+.home-v2 .process-step{padding:24px 22px;background:#fff;border:1px solid #e4eaf0;border-radius:18px}
+.home-v2 .process-step strong{display:block;color:var(--hv-coral);font:800 34px var(--hf);margin-bottom:20px}
+.home-v2 .process-step h3{font:700 19px var(--hf);color:var(--hv-navy);margin-bottom:8px}
+.home-v2 .process-step p{font-size:14.5px;color:var(--hv-muted);line-height:1.6}
+.home-v2 .final-v2{padding:76px 0}
+.home-v2 .final-panel{position:relative;overflow:hidden;padding:clamp(32px,5vw,58px);border-radius:26px;background:linear-gradient(115deg,#ff4a2d,#f36b3d);display:flex;align-items:center;justify-content:space-between;gap:25px}
+.home-v2 .final-panel:after{content:"";position:absolute;width:320px;height:320px;border:48px solid rgba(255,255,255,.12);border-radius:50%;right:12%;top:-220px}
+.home-v2 .final-panel h2{position:relative;z-index:1;color:#fff;font:700 clamp(27px,3.5vw,42px)/1.08 var(--hf);max-width:17ch;margin-bottom:10px}
+.home-v2 .final-panel p{position:relative;z-index:1;color:#fff0eb}
+.home-v2 .final-panel .btn{position:relative;z-index:1;white-space:nowrap}
+.home-v2 .v2-footer-note{font-size:12px;color:#9aa9c0;margin-top:12px}
+@media(max-width:980px){
+ .home-v2 .hero-grid,.home-v2 .about-grid{grid-template-columns:1fr}
+ .home-v2 .hero-visual{max-width:680px;width:100%;margin:0 auto}
+ .home-v2 .hero-photo{height:clamp(330px,62vw,470px)}
+ .home-v2 .service-grid{grid-template-columns:repeat(2,1fr)}
+ .home-v2 .process-grid{grid-template-columns:repeat(2,1fr)}
+ .home-v2 .trust-item{padding:22px 18px}
+ .home-v2 .about-photo{height:390px}
+}
+@media(max-width:620px){
+ .home-v2 .hero-v2{padding:40px 0 35px}
+ .home-v2 .hero-grid{gap:30px}
+ .home-v2 .hero-copy h1{font-size:clamp(39px,11vw,54px);margin:16px 0}
+ .home-v2 .hero-copy>p{font-size:16px;line-height:1.65}
+ .home-v2 .hero-actions{display:grid;grid-template-columns:1fr}
+ .home-v2 .hero-actions .btn{justify-content:center}
+ .home-v2 .hero-visual{padding-left:12px;padding-bottom:27px}
+ .home-v2 .hero-photo{height:330px;border-radius:20px 76px 20px 20px}
+ .home-v2 .visual-index{right:-5px;top:22px}
+ .home-v2 .visual-note{padding:13px 15px;max-width:235px}
+ .home-v2 .trust-strip{padding-bottom:38px}
+ .home-v2 .trust-inner{grid-template-columns:1fr}
+ .home-v2 .trust-item{padding:16px 18px;border-right:0;border-bottom:1px solid #e7ecf2}
+ .home-v2 .trust-item:last-child{border-bottom:0}
+ .home-v2 .intro-v2,.home-v2 .about-v2{padding:60px 0}
+ .home-v2 .section-heading{margin-bottom:26px}
+ .home-v2 .section-heading p{font-size:16px}
+ .home-v2 .service-grid{grid-template-columns:1fr}
+ .home-v2 .service-tile{min-height:245px;padding:24px}
+ .home-v2 .service-icon{margin:20px 0 16px}
+ .home-v2 .showcase-v2{padding:60px 0}
+ .home-v2 .slide-track{grid-auto-columns:minmax(82%,1fr);gap:13px}
+ .home-v2 .showcase-image{height:190px}
+ .home-v2 .slider-controls{align-items:flex-start;gap:14px}
+ .home-v2 .slider-hint{max-width:190px}
+ .home-v2 .about-photo{height:300px;border-radius:18px 18px 70px 18px}
+ .home-v2 .process-v2{padding:58px 0}
+ .home-v2 .process-grid{grid-template-columns:1fr 1fr;gap:10px}
+ .home-v2 .process-step{padding:18px 15px}
+ .home-v2 .process-step strong{font-size:28px;margin-bottom:13px}
+ .home-v2 .final-v2{padding:55px 0}
+ .home-v2 .final-panel{align-items:flex-start;flex-direction:column;border-radius:20px}
+ .home-v2 .final-panel .btn{width:100%;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){
+ .home-v2 *, .home-v2 *:before,.home-v2 *:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body class="home-v2">
+<div class="top"><div class="wrap"><span><a href="tel:+584243089393">0424 308 93 93</a><a href="mailto:Dromedqx.ca@gmail.com">Dromedqx.ca@gmail.com</a></span><span>Maracay, Venezuela · Despachos a nivel nacional</span></div></div>
+<header class="h"><div class="wrap hb"><a class="brand" href="inicio-propuesta.html" aria-label="DromedQX, inicio"><img src="assets/logo-mark.png" alt=""><b>Dromed<i>QX</i></b></a>
+<button class="burger" aria-expanded="false" aria-label="Abrir menú"><span></span></button>
+<nav class="m" aria-label="Principal"><a href="inicio-propuesta.html" aria-current="page">Inicio</a><a href="nosotros.html">Nosotros</a><a href="servicios.html">Servicios</a><a href="productos.html">Productos</a><a href="despachos.html">Despachos</a><a href="novedades.html">Novedades</a><a href="trabaja-con-nosotros.html">Empleo</a><a class="btn" href="contacto.html">Contacto</a></nav></div></header>
+<main>
+<section class="hero-v2"><div class="wrap hero-grid">
+<div class="hero-copy"><span class="eyebrow">Droguería · Maracay, Venezuela</span>
+<h1>El abastecimiento que su centro de salud <span>necesita.</span></h1>
+<p>Medicamentos e insumos médicos, con atención cercana, coordinación de pedidos y soluciones de distribución para clínicas, hospitales y farmacias.</p>
+<div class="hero-actions"><a class="btn" href="contacto.html">Solicitar cotización <span aria-hidden="true">↗</span></a><a class="btn o" href="nosotros.html">Conocer DromedQX</a></div></div>
+<div class="hero-visual"><div class="hero-photo"><img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1300&q=85" alt="Material e insumos médicos" fetchpriority="high"></div><div class="visual-index">SALUD · LOGÍSTICA · CONFIANZA</div><div class="visual-note"><span class="note-icon" aria-hidden="true">✚</span><span><b>Soluciones de abastecimiento</b><small>Para clínicas, hospitales y farmacias</small></span></div></div>
+</div></section>
+<section class="trust-strip"><div class="wrap trust-inner">
+<div class="trust-item"><span class="trust-symbol" aria-hidden="true">⌖</span><div><b>Desde Maracay</b><span>Atención y coordinación desde nuestra sede</span></div></div>
+<div class="trust-item"><span class="trust-symbol" aria-hidden="true">⇢</span><div><b>Despachos nacionales</b><span>Coordinación de entregas a nivel nacional</span></div></div>
+<div class="trust-item"><span class="trust-symbol" aria-hidden="true">＋</span><div><b>Sector salud</b><span>Atención a clínicas, hospitales y farmacias</span></div></div>
+</div></section>
+<section class="intro-v2"><div class="wrap"><div class="section-heading"><span class="eyebrow">Lo que hacemos</span><h2>Un aliado para que su operación no se detenga.</h2><p>Reunimos distintas soluciones para acompañar las necesidades de abastecimiento de los centros de salud.</p></div>
+<div class="service-grid">
+<a class="service-tile" href="servicios.html"><span class="service-num">01 / SERVICIOS</span><span class="service-icon" aria-hidden="true">⇄</span><h3>Distribución e importación</h3><p>Gestión de pedidos y soluciones de abastecimiento para el sector farmacéutico y médico.</p><span class="service-link">Explorar servicios ↗</span></a>
+<a class="service-tile" href="productos.html"><span class="service-num">02 / PRODUCTOS</span><span class="service-icon" aria-hidden="true">✚</span><h3>Medicamentos e insumos</h3><p>Consulta las líneas de productos y categorías disponibles en nuestro catálogo.</p><span class="service-link">Ver productos ↗</span></a>
+<a class="service-tile" href="despachos.html"><span class="service-num">03 / LOGÍSTICA</span><span class="service-icon" aria-hidden="true">⌁</span><h3>Coordinación de despachos</h3><p>Organización y seguimiento de entregas para llevar los pedidos a su destino.</p><span class="service-link">Conocer despachos ↗</span></a>
+</div></div></section>
+<section class="showcase-v2"><div class="wrap"><div class="section-heading"><span class="eyebrow">Un recorrido por nuestro sector</span><h2>Abastecimiento, productos y atención.</h2><p>Una mirada visual a las áreas que forman parte del trabajo de distribución farmacéutica.</p></div>
+<div class="slider-shell"><div class="slide-track" id="home-showcase" aria-label="Carrusel de imágenes del sector farmacéutico">
+<article class="showcase-card"><div class="showcase-image"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80" alt="Profesional de salud en entorno clínico" loading="lazy"></div><div class="showcase-text"><small>01 · Atención</small><h3>Al servicio del sector salud</h3><p>Una labor que requiere compromiso, coordinación y atención a cada solicitud.</p></div></article>
+<article class="showcase-card"><div class="showcase-image"><img src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=900&q=80" alt="Medicamentos organizados en estanterías" loading="lazy"></div><div class="showcase-text"><small>02 · Productos</small><h3>Insumos y medicamentos</h3><p>El abastecimiento comienza con conocer las necesidades de cada cliente.</p></div></article>
+<article class="showcase-card"><div class="showcase-image"><img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=900&q=80" alt="Instalación logística y almacenamiento" loading="lazy"></div><div class="showcase-text"><small>03 · Logística</small><h3>Organización de pedidos</h3><p>La coordinación es clave para preparar y movilizar cada solicitud.</p></div></article>
+<article class="showcase-card"><div class="showcase-image"><img src="https://images.unsplash.com/photo-1580281658628-7c6f1f3f4e4a?auto=format&fit=crop&w=900&q=80" alt="Equipo de atención médica" loading="lazy"></div><div class="showcase-text"><small>04 · Confianza</small><h3>Relaciones que acompañan</h3><p>Atención cercana para construir relaciones de trabajo duraderas.</p></div></article>
+</div><div class="slider-controls"><span class="slider-hint">Desliza para explorar · También puedes usar las flechas</span><div class="slider-buttons"><button type="button" data-slide="-1" aria-label="Ver imágenes anteriores">←</button><button type="button" data-slide="1" aria-label="Ver imágenes siguientes">→</button></div></div></div>
+<p class="v2-footer-note">Imágenes ilustrativas del sector. No representan necesariamente instalaciones, inventario ni personal de DromedQX.</p>
+</div></section>
+<section class="about-v2"><div class="wrap about-grid"><div class="about-photo"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1100&q=85" alt="Profesionales trabajando en el sector salud" loading="lazy"></div><div class="about-copy"><span class="eyebrow">Nosotros</span><h2>Experiencia al servicio de su inventario.</h2><p>Desde Maracay trabajamos para facilitar el abastecimiento de clínicas, hospitales y farmacias, con atención cercana y coordinación de pedidos.</p><ul class="about-points"><li>Atención a organizaciones del sector salud</li><li>Coordinación de pedidos y despachos</li><li>Comunicación directa con nuestro equipo</li></ul><a class="btn o" href="nosotros.html">Conocer nuestra historia</a></div></div></section>
+<section class="process-v2"><div class="wrap"><div class="section-heading"><span class="eyebrow">Cómo trabajamos</span><h2>De su solicitud a la entrega.</h2><p>Un proceso claro para atender cada requerimiento.</p></div><div class="process-grid">
+<div class="process-step"><strong>01</strong><h3>Nos contacta</h3><p>Comparte los productos o insumos que necesita.</p></div>
+<div class="process-step"><strong>02</strong><h3>Revisamos</h3><p>Verificamos disponibilidad y condiciones del pedido.</p></div>
+<div class="process-step"><strong>03</strong><h3>Coordinamos</h3><p>Organizamos la preparación y el despacho.</p></div>
+<div class="process-step"><strong>04</strong><h3>Recibe</h3><p>Coordinamos la entrega en el destino acordado.</p></div>
+</div></div></section>
+<section class="final-v2"><div class="wrap"><div class="final-panel"><div><h2>Hablemos de lo que necesita su centro de salud.</h2><p>Estamos listos para atender su consulta y orientarle.</p></div><a class="btn w" href="contacto.html">Solicitar cotización ↗</a></div></div></section>
+</main>
+<footer><div class="wrap"><div class="fg">
+<div><div class="lg"><img src="assets/logo-full.png" alt="DromedQX"></div><p>Droguería y distribuidora farmacéutica con despachos a nivel nacional.</p></div>
+<div><h4>Empresa</h4><ul><li><a href="nosotros.html">Nosotros</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="productos.html">Productos</a></li><li><a href="despachos.html">Despachos</a></li></ul></div>
+<div><h4>Información</h4><ul><li><a href="novedades.html">Novedades</a></li><li><a href="trabaja-con-nosotros.html">Empleo</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+<div><h4>Contacto</h4><ul><li><a href="tel:+584243089393">0424 308 93 93</a></li><li><a href="mailto:Dromedqx.ca@gmail.com">Dromedqx.ca@gmail.com</a></li><li>Maracay, Venezuela</li><li>RIF J-40839102-3</li></ul></div>
+</div><div class="fb"><span>© DromedQX. Todos los derechos reservados.</span><span>Maracay, Venezuela · Distribución farmacéutica nacional</span></div></div></footer>
+<a class="wa" href="https://wa.me/584243089393" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><span>WhatsApp</span></a>
+<script src="assets/site.js"></script>
+<script>
+(function(){
+ var track=document.getElementById('home-showcase');
+ if(!track)return;
+ var controls=document.querySelectorAll('[data-slide]');
+ var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function step(){var card=track.querySelector('.showcase-card');return card?card.getBoundingClientRect().width+18:track.clientWidth*.8}
+ controls.forEach(function(button){button.addEventListener('click',function(){track.scrollBy({left:step()*Number(button.getAttribute('data-slide')),behavior:reduced?'auto':'smooth'})})});
+ var timer=null;
+ function stop(){if(timer){window.clearInterval(timer);timer=null}}
+ function start(){if(reduced||timer)return;timer=window.setInterval(function(){var end=track.scrollWidth-track.clientWidth;if(track.scrollLeft>=end-8){track.scrollTo({left:0,behavior:'smooth'})}else{track.scrollBy({left:step(),behavior:'smooth'})}},5200)}
+ track.addEventListener('mouseenter',stop);track.addEventListener('mouseleave',start);
+ track.addEventListener('focusin',stop);track.addEventListener('focusout',start);
+ document.addEventListener('visibilitychange',function(){if(document.hidden)stop();else start()});
+ start();
+})();
+</script>
+</body></html>
