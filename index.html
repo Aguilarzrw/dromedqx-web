@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DromedQX · Droguería con despachos a nivel nacional</title>
+<meta name="description" content="DromedQX, droguería y distribuidora de productos de salud. Despachos a nivel nacional. Arma tu pedido y cotiza por WhatsApp.">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<style>
+:root{--or:#F26B1D;--or-d:#C94F0A;--tl:#13878A;--tl-d:#0B5E61;--ink:#13202B;--mut:#5A6776;--soft:#FFF4EC;--soft2:#E8F5F5;--line:#E3E8ED;--r:20px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);line-height:1.6;font-size:17px;background:#fff;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.demo{background:var(--ink);color:#cfd8e1;font-size:13px;text-align:center;padding:7px 12px}
+.demo b{color:#fff}
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:21px;letter-spacing:-.02em}
+.logo i{width:36px;height:36px;border-radius:50%;background:var(--or);display:grid;place-items:center;color:#fff;font-style:normal;font-size:21px;font-weight:800;box-shadow:inset -5px -5px 0 rgba(0,0,0,.12)}
+.logo span em{color:var(--or);font-style:normal}
+nav ul{display:flex;gap:26px;list-style:none;font-size:15px;font-weight:600;color:var(--mut)}
+nav a:hover{color:var(--or-d)}
+.cta{display:inline-flex;align-items:center;gap:8px;background:var(--or);color:#fff;font-weight:700;padding:11px 20px;border-radius:12px;font-size:15px;transition:.2s}
+.cta:hover{background:var(--or-d);transform:translateY(-1px)}
+.cta.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
+.cta.ghost:hover{background:rgba(255,255,255,.14)}
+.cta.teal{background:var(--tl)} .cta.teal:hover{background:var(--tl-d)}
+.cart-btn{position:relative}
+.cart-btn .n{background:#fff;color:var(--or-d);border-radius:99px;font-size:12px;min-width:21px;height:21px;display:grid;place-items:center;font-weight:800;padding:0 5px}
+.burger{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);font-size:20px}
+@media(max-width:900px){nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:10px 22px 18px}nav.open{display:block}nav ul{flex-direction:column;gap:14px}.burger{display:block}header .cta.hide-m{display:none}}
+/* hero */
+.hero{background:linear-gradient(120deg,var(--or) 0%,#F58634 48%,#E98A4A 62%,var(--tl) 140%);color:#fff;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.10)}
+.hero:before{width:520px;height:520px;right:-160px;top:-200px}
+.hero:after{width:300px;height:300px;left:-120px;bottom:-140px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-top:72px;padding-bottom:72px;position:relative;z-index:1}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.2);padding:7px 15px;border-radius:99px;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px}
+.hero h1{font-size:clamp(36px,5.4vw,60px);line-height:1.06;font-weight:800;letter-spacing:-.025em}
+.hero p.lead{font-size:clamp(18px,2.2vw,21px);margin-top:20px;max-width:540px;opacity:.96}
+.hero .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hero .btns .cta:first-child{background:#fff;color:var(--or-d)}
+.hero .btns .cta:first-child:hover{background:#FFF1E6}
+.hero-img{position:relative}
+.ph{background:linear-gradient(135deg,#ffd9bf,#bfe7e7);position:relative;overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.noimg:after{content:"DromedQX";position:absolute;inset:0;display:grid;place-items:center;color:rgba(19,32,43,.35);font-weight:800;font-size:22px}
+.hero-img .ph{border-radius:28px;aspect-ratio:1/1;box-shadow:0 30px 70px rgba(80,30,0,.35);border:6px solid rgba(255,255,255,.9)}
+.float{position:absolute;background:#fff;color:var(--ink);border-radius:16px;padding:12px 16px;box-shadow:0 14px 34px rgba(0,0,0,.2);font-size:14px;line-height:1.3}
+.float b{display:block;font-size:22px;color:var(--or-d)}
+.float.a{left:-26px;bottom:34px} .float.b{right:-14px;top:30px}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr;padding-top:48px;padding-bottom:56px}.hero-img{max-width:440px}.float.a{left:8px}.float.b{right:8px}}
+/* stats */
+.stats{background:#fff;margin-top:-1px}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-top:34px;padding-bottom:34px}
+.st{text-align:center;padding:6px}
+.st b{display:block;font-size:34px;line-height:1.1;color:var(--or);font-weight:800}
+.st span{font-size:14px;color:var(--mut)}
+@media(max-width:700px){.stats .wrap{grid-template-columns:repeat(2,1fr)}}
+/* sections */
+section{padding:84px 0}
+.alt{background:var(--soft)} .alt2{background:var(--soft2)}
+.kick{color:var(--or-d);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+h2{font-size:clamp(28px,4vw,42px);line-height:1.12;letter-spacing:-.02em;margin-bottom:16px}
+.sub{color:var(--mut);font-size:19px;max-width:660px;margin-bottom:44px}
+.grid{display:grid;gap:22px}
+.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:1fr 1fr}
+@media(max-width:960px){.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:820px){.g3,.g2{grid-template-columns:1fr}}
+@media(max-width:520px){.g4{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;transition:.25s}
+.card:hover{box-shadow:0 16px 40px rgba(19,32,43,.09);transform:translateY(-3px)}
+.ico{width:52px;height:52px;border-radius:14px;background:var(--soft);display:grid;place-items:center;margin-bottom:16px}
+.ico svg{width:28px;height:28px;stroke:var(--or);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card.t .ico{background:var(--soft2)} .card.t .ico svg{stroke:var(--tl)}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--mut);font-size:16px}
+/* nosotros */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about .photos{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.about .photos .ph{border-radius:22px;aspect-ratio:1/1;box-shadow:0 14px 34px rgba(19,32,43,.12)}
+.about .photos .ph:nth-child(2){margin-top:34px}
+.about p{color:var(--mut);margin-bottom:14px}
+.checks{list-style:none;margin-top:20px}
+.checks li{padding:8px 0 8px 32px;position:relative;font-weight:600}
+.checks li:before{content:"✓";position:absolute;left:0;top:8px;width:22px;height:22px;border-radius:50%;background:var(--tl);color:#fff;font-size:13px;display:grid;place-items:center}
+@media(max-width:860px){.about{grid-template-columns:1fr;gap:36px}}
+/* despachos */
+.band{background:linear-gradient(120deg,var(--tl-d),var(--tl));color:#fff}
+.band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.band h2{color:#fff} .band p{opacity:.92;font-size:18px}
+.band .ph{border-radius:26px;aspect-ratio:1/1;border:6px solid rgba(255,255,255,.9);box-shadow:0 26px 60px rgba(0,0,0,.3)}
+.steps{display:grid;gap:12px;margin-top:26px}
+.step{display:flex;gap:14px;align-items:center;background:rgba(255,255,255,.12);border-radius:14px;padding:13px 16px;font-weight:600}
+.step i{flex:none;width:32px;height:32px;border-radius:50%;background:#fff;color:var(--tl-d);display:grid;place-items:center;font-style:normal;font-weight:800}
+@media(max-width:860px){.band .wrap{grid-template-columns:1fr;gap:34px}}
+/* catalogo */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px;align-items:center}
+.tab{padding:9px 18px;border-radius:99px;border:1.5px solid var(--line);font-weight:700;font-size:15px;background:#fff;color:var(--mut)}
+.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.search{margin-left:auto;border:1.5px solid var(--line);border-radius:99px;padding:9px 18px;font:inherit;font-size:15px;min-width:200px;outline:none}
+.search:focus{border-color:var(--or)}
+@media(max-width:640px){.search{margin-left:0;width:100%}}
+.prod{display:flex;flex-direction:column}
+.prod .pi{height:110px;border-radius:14px;background:var(--soft);display:grid;place-items:center;margin-bottom:14px}
+.prod .pi svg{width:46px;height:46px;stroke:var(--or);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.prod small{color:var(--tl-d);font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.prod h3{font-size:17px;margin:4px 0 2px}
+.prod p{color:var(--mut);font-size:14.5px;margin-bottom:14px}
+.prod .cta{margin-top:auto;justify-content:center;padding:10px 14px;font-size:14.5px}
+.empty{display:none;text-align:center;color:var(--mut);padding:30px}
+.note{font-size:14px;color:var(--mut);margin-top:20px}
+/* feed real */
+.feed{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.feed .ph{border-radius:18px;aspect-ratio:1/1;display:block}
+.feed a:hover img{transform:scale(1.04)} .feed img{transition:.4s}
+@media(max-width:820px){.feed{grid-template-columns:repeat(2,1fr)}}
+/* vendedores */
+.sel{display:flex;flex-direction:column;gap:2px}
+.person{display:flex;gap:14px;align-items:center}
+.av{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--or),#f6a15f);color:#fff;display:grid;place-items:center;font-weight:800;font-size:20px;flex:none}
+.av.t{background:linear-gradient(135deg,var(--tl),#4db4b6)}
+.person h3{font-size:17px;margin:0}
+.person p{font-size:14px;margin:0;color:var(--mut)}
+.person .cta{margin-left:auto;padding:8px 14px;font-size:14px}
+/* contacto */
+.contact{background:var(--ink);color:#fff;text-align:center}
+.contact h2{color:#fff} .contact p{color:#c8d2dc;max-width:600px;margin:0 auto 28px;font-size:19px}
+.contact .btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+footer{background:#0c161e;color:#8fa0b0;padding:30px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+/* drawer */
+.ov{position:fixed;inset:0;background:rgba(10,20,30,.5);opacity:0;pointer-events:none;transition:.25s;z-index:80}
+.ov.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:#fff;z-index:90;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column;box-shadow:-20px 0 50px rgba(0,0,0,.2)}
+.drawer.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}
+.dh h3{font-size:20px}
+.dh button{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);font-size:18px}
+.db{flex:1;overflow:auto;padding:18px 22px}
+.it{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.it div:first-child{flex:1} .it b{display:block;font-size:15.5px} .it span{font-size:13.5px;color:var(--mut)}
+.qty{display:flex;align-items:center;gap:6px}
+.qty button{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);font-weight:800}
+.qty em{min-width:26px;text-align:center;font-style:normal;font-weight:700}
+.none{color:var(--mut);text-align:center;padding:40px 10px}
+.df{padding:18px 22px;border-top:1px solid var(--line);display:grid;gap:10px;background:#fafbfc}
+.df label{font-size:13px;font-weight:700;color:var(--mut)}
+.df input,.df select,.df textarea{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:15px;outline:none;background:#fff}
+.df input:focus,.df select:focus,.df textarea:focus{border-color:var(--or)}
+.df textarea{resize:none;height:56px}
+.df .cta{justify-content:center;width:100%;border-radius:12px;padding:13px;font-size:16px}
+.df .cta[disabled]{opacity:.45;pointer-events:none}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(80px);background:var(--ink);color:#fff;padding:12px 20px;border-radius:12px;font-size:15px;z-index:99;transition:.3s;opacity:0}
+.toast.on{transform:translateX(-50%);opacity:1}
+</style>
+</head>
+<body>
+
+<div class="demo"><b>Vista previa de diseño</b> · Propuesta de página web para DromedQX · contenido y catálogo de muestra</div>
+
+<header><div class="wrap">
+  <a href="#inicio" class="logo"><i>d</i><span>Dromed<em>QX</em></span></a>
+  <nav id="nav"><ul>
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#despachos">Despachos</a></li>
+    <li><a href="#catalogo">Catálogo</a></li>
+    <li><a href="#equipo">Ventas</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul></nav>
+  <div style="display:flex;gap:10px;align-items:center">
+    <button class="cta cart-btn" id="openCart" aria-label="Abrir mi cotización">Mi cotización <span class="n" id="cnt">0</span></button>
+    <button class="burger" id="burger" aria-label="Menú">☰</button>
+  </div>
+</div></header>
+
+<section class="hero" id="inicio" style="padding:0"><div class="wrap">
+  <div>
+    <span class="pill">Droguería · Distribuidores</span>
+    <h1>¡Somos la mejor opción para tu salud!</h1>
+    <p class="lead">Distribuimos medicamentos y material médico-quirúrgico con despachos a nivel nacional. Arma tu pedido y recibe tu cotización directo por WhatsApp.</p>
+    <div class="btns">
+      <a href="#catalogo" class="cta">Armar mi cotización</a>
+      <a href="#equipo" class="cta ghost">Hablar con un vendedor</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <div class="ph"><img data-img="aerial" alt="Sede de DromedQX" ></div>
+    <div class="float b"><b>10 años</b>llegando a cada rincón del país</div>
+    <div class="float a"><b>Nacional</b>cobertura de despachos</div>
+  </div>
+</div></section>
+
+<div class="stats"><div class="wrap">
+  <div class="st"><b>10+</b><span>años de trayectoria</span></div>
+  <div class="st"><b>Nacional</b><span>despachos a todo el país</span></div>
+  <div class="st"><b>11,3 mil</b><span>seguidores en Instagram</span></div>
+  <div class="st"><b>5</b><span>asesores de venta a tu servicio</span></div>
+</div></div>
+
+<section id="nosotros" class="alt"><div class="wrap about">
+  <div class="photos">
+    <div class="ph"><img data-img="team10" alt="Equipo DromedQX, 10 años"></div>
+    <div class="ph"><img data-img="team" alt="Equipo DromedQX"></div>
+  </div>
+  <div>
+    <div class="kick">Nosotros</div>
+    <h2>Diez años cuidando que tu inventario nunca falte</h2>
+    <p>DromedQX es una droguería venezolana que abastece a farmacias, clínicas, hospitales y distribuidores. Detrás de cada despacho hay un equipo humano que cuida los tiempos, la calidad y la cadena de suministro.</p>
+    <ul class="checks">
+      <li>Despachos a nivel nacional</li>
+      <li>Flota propia de reparto</li>
+      <li>Atención personalizada por asesor</li>
+      <li>Productos de calidad y confiabilidad</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="servicios"><div class="wrap">
+  <div class="kick">Servicios</div>
+  <h2>Todo lo que tu negocio de salud necesita</h2>
+  <p class="sub">Un solo aliado para surtir tu farmacia, clínica o punto de venta, sin vueltas.</p>
+  <div class="grid g3">
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M10.5 20.5 3.5 13.5a4.95 4.95 0 0 1 7-7l7 7a4.95 4.95 0 0 1-7 7z"/><path d="m8.5 8.5 7 7"/></svg></div><h3>Medicamentos</h3><p>Surtido amplio para farmacias y distribuidores, con presentaciones al mayor.</p></div>
+    <div class="card t"><div class="ico"><svg viewBox="0 0 24 24"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3a1 1 0 0 1-1.4 0l-3.6-3.6a1 1 0 0 1 0-1.4L14 4"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/></svg></div><h3>Material médico-quirúrgico</h3><p>Guantes, jeringas, gasas y protección de alta calidad para tus procedimientos.</p></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M9 6V4h6v2"/><path d="M12 10v6M9 13h6"/></svg></div><h3>Botiquín y cuidado personal</h3><p>Productos de rotación constante para que tu botiquín se renueve cada semana.</p></div>
+    <div class="card t"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 17h13V6H3z"/><path d="M16 9h4l2 3v5h-6"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div><h3>Entrega a tu puerta</h3><p>Tu pedido directo a la puerta de tu clínica, hospital o farmacia.</p></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Cotización por WhatsApp</h3><p>Un asesor te responde con tu cotización armada, sin llenar formularios largos.</p></div>
+    <div class="card t"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Calidad garantizada</h3><p>Trabajamos con líneas confiables y cuidamos la trazabilidad de cada producto.</p></div>
+  </div>
+</div></section>
+
+<section id="despachos" class="band"><div class="wrap">
+  <div>
+    <div class="kick" style="color:#FFD9BF">Despachos nacionales</div>
+    <h2>De nuestras manos a las tuyas, en cualquier rincón del país</h2>
+    <p>Cada pedido sale con seguimiento de nuestro equipo de logística y llega con la calidad con que salió de nuestro almacén.</p>
+    <div class="steps">
+      <div class="step"><i>1</i>Arma tu cotización en la web</div>
+      <div class="step"><i>2</i>Tu asesor la confirma por WhatsApp</div>
+      <div class="step"><i>3</i>Preparamos y despachamos tu pedido</div>
+      <div class="step"><i>4</i>Recibes en tu clínica, hospital o farmacia</div>
+    </div>
+  </div>
+  <div class="ph"><img data-img="van" alt="Camioneta de reparto DromedQX"></div>
+</div></section>
+
+<section id="catalogo"><div class="wrap">
+  <div class="kick">Catálogo · opcional</div>
+  <h2>Arma tu cotización en minutos</h2>
+  <p class="sub">Elige los productos, indica las cantidades y envía tu pedido por WhatsApp al asesor de tu zona.</p>
+  <div class="tabs" id="tabs">
+    <button class="tab on" data-c="all">Todos</button>
+    <button class="tab" data-c="med">Medicamentos</button>
+    <button class="tab" data-c="mq">Material médico-quirúrgico</button>
+    <button class="tab" data-c="eq">Equipos</button>
+    <input class="search" id="q" placeholder="Buscar producto…" aria-label="Buscar producto">
+  </div>
+  <div class="grid g4" id="grid"></div>
+  <div class="empty" id="empty">No encontramos productos con esa búsqueda.</div>
+  <p class="note">Catálogo de muestra para la vista previa. En la versión final se carga el inventario real y se puede actualizar sin programar.</p>
+
+  <h2 style="font-size:26px;margin:64px 0 10px">Novedades y productos destacados</h2>
+  <p class="sub" style="margin-bottom:24px;font-size:17px">Lo último que compartimos en nuestro Instagram.</p>
+  <div class="feed">
+    <a class="ph" href="https://www.instagram.com/dromedqx/" target="_blank" rel="noopener"><img data-img="gloves" alt="Guantes, envíos gratis a nivel nacional"></a>
+    <a class="ph" href="https://www.instagram.com/dromedqx/" target="_blank" rel="noopener"><img data-img="propofol" alt="Contamos con líneas, envíos gratis"></a>
+    <a class="ph" href="https://www.instagram.com/dromedqx/" target="_blank" rel="noopener"><img data-img="pedido" alt="Tu pedido directo a la puerta"></a>
+    <a class="ph" href="https://www.instagram.com/dromedqx/" target="_blank" rel="noopener"><img data-img="sede" alt="Somos Droguería"></a>
+  </div>
+</div></section>
+
+<section id="equipo" class="alt2"><div class="wrap">
+  <div class="kick">Equipo de ventas</div>
+  <h2>Habla directo con tu asesor</h2>
+  <p class="sub">Cada asesor atiende una zona. Escríbele y te cotiza en el día.</p>
+  <div class="grid g3" id="sellers"></div>
+  <p class="note">Nombres, zonas y números de muestra: se reemplazan por los reales del equipo.</p>
+</div></section>
+
+<section id="contacto" class="contact"><div class="wrap">
+  <h2>¿Listo para surtir tu negocio?</h2>
+  <p>Escríbenos y te ayudamos a armar tu pedido. Despachos a nivel nacional.</p>
+  <div class="btns">
+    <a class="cta" href="https://wa.me/?text=Hola%20DromedQX%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    <a class="cta ghost" href="https://www.instagram.com/dromedqx/" target="_blank" rel="noopener">@dromedqx en Instagram</a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>© 2026 DromedQX · RIF J-40839102-3</span>
+  <span>Vista previa de diseño creada por Reyniel Aguilar · aguidev</span>
+</div></footer>
+
+<div class="ov" id="ov"></div>
+<aside class="drawer" id="drawer" aria-label="Mi cotización">
+  <div class="dh"><h3>Mi cotización</h3><button id="closeCart" aria-label="Cerrar">✕</button></div>
+  <div class="db" id="items"></div>
+  <div class="df">
+    <div><label for="nom">Nombre o negocio</label><input id="nom" placeholder="Ej: Farmacia San José"></div>
+    <div><label for="zona">Tu zona</label>
+      <select id="zona"></select></div>
+    <div><label for="nota">Notas (opcional)</label><textarea id="nota" placeholder="Urgencia, dirección de entrega, etc."></textarea></div>
+    <a class="cta" id="send" href="#" target="_blank" rel="noopener">Enviar cotización por WhatsApp</a>
+  </div>
+</aside>
+<div class="toast" id="toast"></div>
+
+<script>
+/* Fotos tomadas del Instagram público de DromedQX para esta vista previa.
+   Los enlaces de Instagram caducan: en la versión final se guardan en /img. */
+const IMG={
+ aerial:"https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/869663663_18073185875723736_6171465805052273362_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&cb=30a688f7-ea5c0a5a&ig_cache_key=NDAxODY0MDQwNzM3NDQyOTQ0OTE4MDczMTg1ODcyNzIzNzM2.3-ccb7-5-cb30a688f7-ea5c0a5a&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjU3Ni5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9&_nc_ohc=aT-TyOgjX6kQ7kNvwFzpFte&_nc_oc=AdrtMWPNgUK3GuNDuMc0yDJZkpoAyNa7oEZsYF07dUkS6kC3A4qzstpwNnRc8XLjj8E&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=YKhUAAevLilpVdO94preXA&_nc_ss=7baaf&oh=00_AQQo-0DTMs0301d7HU-4t0_7_3FdVQB28ZitUcs1aLnkOA&oe=6AFBE3A7",
+ team10:"https://scontent-sea5-2.cdninstagram.com/v/t39.30808-6/773800386_1023067850567350_1589010613424152975_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&cb=30a688f7-ea5c0a5a&ig_cache_key=Mzk2MzUyMzMxNzkyODY2NzI0NA%3D%3D.3-ccb7-5-cb30a688f7-ea5c0a5a&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=pIWbtvgdUosQ7kNvwG9ZrUs&_nc_oc=AdqU0FeO1jpjzYP7CpoU_eGb_SCMBlHTqJl9BzX2n1rhsw-DQ9gviqGfjepZk72kaZg&_nc_zt=23&_nc_ht=scontent-sea5-2.cdninstagram.com&_nc_gid=YKhUAAevLilpVdO94preXA&_nc_ss=7baaf&oh=00_AQS1lSadOm_jTviP_Kt6ZvfZxfsTfBZLCKOHNRBrlyrrjQ&oe=6AFBD925",
+ team:"https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/867022153_18072721745723736_3160097498921692568_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&cb=30a688f7-ea5c0a5a&ig_cache_key=NDAxNjYyODg3ODYxNzI1MTM3NzE4MDcyNzIxNzQyNzIzNzM2.3-ccb7-5-cb30a688f7-ea5c0a5a&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjc1MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9&_nc_ohc=vir83RXKq_IQ7kNvwFwj1sQ&_nc_oc=AdoazDxt4cyFC-mntyLdgFgl7OV2YW8C_zA8w3S3nHOrMJzR9vdYV0v6B7ca8m5zZQ4&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=YKhUAAevLilpVdO94preXA&_nc_ss=7baaf&oh=00_AQTmGTgzCu2YkStizl3JYVSpC_1d1VOd0_e_3j1yoLu43A&oe=6AFC039A",
+ van:"https://scontent-sea5-1.cdninstagram.com/v/t51.82787-15/861826036_18073353266723736_492414748892746274_n.jpg?stp=dst-jpg_e15_tt6&_nc_cat=111&_nc_map=urlgen_bucketless&cb=30a688f7-ea5c0a5a&ig_cache_key=NDAxOTQ3MzI0NjIxODgxOTMyMzE4MDczMzUzMjYzNzIzNzM2.3-ccb7-5-cb30a688f7-ea5c0a5a&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjc1MC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9&_nc_ohc=4gvsBXUv70gQ7kNvwHQGWpI&_nc_oc=AdoEM6iUqic45T5WLgyokrMRAyu9SVVyP_I_LpeArquriWBEUHANFj1pHhyDKceFKP0&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=YKhUAAevLilpVdO94preXA&_nc_ss=7baaf&oh=00_AQRTRdyoQe68gaomhT6uiC6uF-_QlpQ7XH2_HIRAz4mXqw&oe=6AFBD447",
+ gloves:"https://scontent-sea5-2.cdninstagram.com/v/t39.30808-6/813790913_1051567071050761_8587886321427219595_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&cb=30a688f7-ea5c0a5a&ig_cache_key=Mzk4NzYxODA0ODczMjMzODc3MA%3D%3D.3-ccb7-5-cb30a688f7-ea5c0a5a&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=jlMguMwv5JcQ7kNvwEoP1zO&_nc_oc=AdqCnkyWTY9mFkBaqM9lMJ_a1IpK4MxJ2tkTGdOuq4Dtp9Mfesxnb-5ueyCbz0WTOaU&_nc_zt=23&_nc_ht=scontent-sea5-2.cdninstagram.com&_nc_gid=qZ4B_UUIvl3SY4LY7eOhCA&_nc_ss=7baaf&oh=00_AQQpa3NstjZgdGjfgZPzBfoWL3Fg8uUJTCzUEKGoA_BAVQ&oe=6AFBD230",
+ propofol:"https://scontent-sea5-1.cdninstagram.com/v/t39.30808-6/795015371_1055780077296127_5707658084665530307_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&_nc_map=urlgen_bucketless&cb=30a688f7-ea5c0a5a&ig_cache_key=Mzk5MTI4NjA2NzgxNTcyNjkxOA%3D%3D.3-ccb7-5-cb30a688f7-ea5c0a5a&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=9C4IXAkaN9IQ7kNvwHeiSQj&_nc_oc=AdrEYIDjqaxU4mPLlQeAYIajMEk4V0OhF7lBn59Bo1VH-MOqOHdwweNZho-v7PKN1_E&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=qZ4B_UUIvl3SY4LY7eOhCA&_nc_ss=7baaf&oh=00_AQSSPY9XNle5Wkq1E7rkeM8yew-IiZNxhla_k220YJsCsw&oe=6AFBFFB9",
+ pedido:"https://scontent-sea5-2.cdninstagram.com/v/t39.30808-6/790425818_1038912542316214_2421467341976546615_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&_nc_map=urlgen_bucketless&cb=30a688f7-ea5c0a5a&ig_cache_key=Mzk3ODAxODczNzIzOTQ5MzEzNg%3D%3D.3-ccb7-5-cb30a688f7-ea5c0a5a&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=Wuy4vWzuGxsQ7kNvwG24w13&_nc_oc=AdoqhhiYhG0AAnR4g00TqTX8-TjTNU4cdVVRvZEgO30L-wsx3Ojt5UYXlpIjUJg8KMg&_nc_zt=23&_nc_ht=scontent-sea5-2.cdninstagram.com&_nc_gid=qZ4B_UUIvl3SY4LY7eOhCA&_nc_ss=7baaf&oh=00_AQRatmlVjxUPjwMQVixbjr8KMrbOeSFhLsPxh4OKNEXCqg&oe=6AFBEA20",
+ sede:"https://scontent-sea5-1.cdninstagram.com/v/t39.30808-6/468443393_17989765496723736_811513861087234416_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&_nc_map=urlgen_bucketless&cb=30a688f7-ea5c0a5a&ig_cache_key=MzQzMzIyMDA3NjkzOTk0OTQxMg%3D%3D.3-ccb7-5-cb30a688f7-ea5c0a5a&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=Z0eNN_uxfjEQ7kNvwG3wlRk&_nc_oc=Adp8ItnW_PqevpeWjfAlyhfqdVyTW4DdRHOD_EQFFavEPRnoNZs8-cJ50srpSL74ck8&_nc_zt=23&_nc_ht=scontent-sea5-1.cdninstagram.com&_nc_gid=YKhUAAevLilpVdO94preXA&_nc_ss=7baaf&oh=00_AQTuEpu39bNNHypmQY73d9tjEz7invlPq5CR66uq-hzIkg&oe=6AFC035F"
+};
+document.querySelectorAll('img[data-img]').forEach(im=>{
+  im.referrerPolicy='no-referrer';
+  im.loading='lazy';
+  im.onerror=()=>{im.parentElement.classList.add('noimg');im.remove()};
+  im.src=IMG[im.dataset.img];
+});
+
+/* Datos de muestra */
+const ICON={
+ med:'<svg viewBox="0 0 24 24"><path d="M10.5 20.5 3.5 13.5a4.95 4.95 0 0 1 7-7l7 7a4.95 4.95 0 0 1-7 7z"/><path d="m8.5 8.5 7 7"/></svg>',
+ mq:'<svg viewBox="0 0 24 24"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3a1 1 0 0 1-1.4 0l-3.6-3.6a1 1 0 0 1 0-1.4L14 4"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/></svg>',
+ eq:'<svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h4"/><circle cx="15" cy="16" r="1.2"/></svg>'
+};
+const CAT={med:'Medicamentos',mq:'Material médico-quirúrgico',eq:'Equipos'};
+const P=[
+ {id:1,c:'med',n:'Acetaminofén 500 mg',p:'Caja x 100 tabletas'},
+ {id:2,c:'med',n:'Ibuprofeno 400 mg',p:'Caja x 100 tabletas'},
+ {id:3,c:'med',n:'Loratadina 10 mg',p:'Caja x 100 tabletas'},
+ {id:4,c:'med',n:'Omeprazol 20 mg',p:'Caja x 30 cápsulas'},
+ {id:5,c:'mq',n:'Guantes de examen de nitrilo',p:'Caja x 100 unidades'},
+ {id:6,c:'mq',n:'Jeringas desechables 5 ml',p:'Caja x 100 unidades'},
+ {id:7,c:'mq',n:'Tapabocas quirúrgico',p:'Caja x 50 unidades'},
+ {id:8,c:'mq',n:'Gasas estériles',p:'Paquete x 100 unidades'},
+ {id:9,c:'eq',n:'Tensiómetro digital',p:'Unidad'},
+ {id:10,c:'eq',n:'Termómetro digital',p:'Unidad'},
+ {id:11,c:'eq',n:'Oxímetro de pulso',p:'Unidad'},
+ {id:12,c:'eq',n:'Glucómetro',p:'Kit con tiras'}
+];
+const ZONAS=[
+ ['Capital y Miranda','Vendedor 1'],['Centro (Aragua, Carabobo)','Vendedor 2'],['Occidente','Vendedor 3'],
+ ['Oriente','Vendedor 4'],['Los Andes y Llanos','Vendedor 5']
+];
+const cart=new Map();
+let cat='all',term='';
+const $=s=>document.querySelector(s);
+
+function renderGrid(){
+  const list=P.filter(p=>(cat==='all'||p.c===cat)&&p.n.toLowerCase().includes(term));
+  $('#grid').innerHTML=list.map(p=>`<div class="card prod"><div class="pi">${ICON[p.c]}</div><small>${CAT[p.c]}</small><h3>${p.n}</h3><p>${p.p}</p><button class="cta" data-add="${p.id}">Agregar a cotización</button></div>`).join('');
+  $('#empty').style.display=list.length?'none':'block';
+}
+function renderCart(){
+  const n=[...cart.values()].reduce((a,b)=>a+b,0);
+  $('#cnt').textContent=n;
+  const box=$('#items');
+  if(!cart.size){box.innerHTML='<div class="none">Aún no has agregado productos.<br>Explora el catálogo y arma tu pedido.</div>'}
+  else box.innerHTML=[...cart].map(([id,q])=>{const p=P.find(x=>x.id==id);return `<div class="it"><div><b>${p.n}</b><span>${p.p}</span></div><div class="qty"><button data-m="${id}">−</button><em>${q}</em><button data-p="${id}">+</button></div></div>`}).join('');
+  const nom=$('#nom').value.trim(),zona=$('#zona').value;
+  const lines=[...cart].map(([id,q])=>{const p=P.find(x=>x.id==id);return `• ${p.n} (${p.p}) x ${q}`});
+  const msg=`Hola DromedQX, quiero una cotización.\n${nom?'Negocio: '+nom+'\n':''}Zona: ${zona}\n\n${lines.join('\n')}${$('#nota').value.trim()?'\n\nNotas: '+$('#nota').value.trim():''}`;
+  const s=$('#send');
+  s.href='https://wa.me/?text='+encodeURIComponent(msg);
+  s.toggleAttribute('disabled',!cart.size);
+}
+function toast(t){const e=$('#toast');e.textContent=t;e.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove('on'),1800)}
+function cartOpen(o){$('#drawer').classList.toggle('on',o);$('#ov').classList.toggle('on',o)}
+
+document.addEventListener('click',e=>{
+  const t=e.target.closest('[data-add],[data-p],[data-m],.tab,[data-pick]');
+  if(!t)return;
+  if(t.dataset.add){const id=+t.dataset.add;cart.set(id,(cart.get(id)||0)+1);renderCart();toast('Agregado a tu cotización')}
+  else if(t.dataset.p){const id=+t.dataset.p;cart.set(id,cart.get(id)+1);renderCart()}
+  else if(t.dataset.m){const id=+t.dataset.m,q=cart.get(id)-1;q?cart.set(id,q):cart.delete(id);renderCart()}
+  else if(t.classList.contains('tab')){document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));t.classList.add('on');cat=t.dataset.c;renderGrid()}
+  else if(t.dataset.pick){$('#zona').value=t.dataset.pick;cartOpen(true);renderCart()}
+});
+$('#q').addEventListener('input',e=>{term=e.target.value.trim().toLowerCase();renderGrid()});
+$('#openCart').onclick=()=>cartOpen(true);
+$('#closeCart').onclick=()=>cartOpen(false);
+$('#ov').onclick=()=>cartOpen(false);
+['nom','zona','nota'].forEach(i=>$('#'+i).addEventListener('input',renderCart));
+$('#burger').onclick=()=>$('#nav').classList.toggle('open');
+document.querySelectorAll('#nav a').forEach(a=>a.onclick=()=>$('#nav').classList.remove('open'));
+
+$('#zona').innerHTML=ZONAS.map(z=>`<option>${z[0]}</option>`).join('');
+$('#sellers').innerHTML=ZONAS.map((z,i)=>`<div class="card"><div class="person"><div class="av ${i%2?'t':''}">${i+1}</div><div><h3>${z[1]}</h3><p>${z[0]}</p></div><button class="cta ${i%2?'teal':''}" data-pick="${z[0]}">Cotizar</button></div></div>`).join('');
+renderGrid();renderCart();
+</script>
+</body>
+</html>
