@@ -439,3 +439,13 @@ header.h:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3p
 .stats-section .stats span{font-size:14px;line-height:1.4}
 @media(max-width:900px){.stats-section .stats{gap:12px}.stats-section .stats>div{padding:18px 16px 20px;min-height:150px}.stats .si{width:36px;height:36px;margin-bottom:6px}.stats-section .stats b{font-size:27px}}
 @media(max-width:900px){.mh{height:clamp(676px,176vw,780px)}}
+
+/* tarjetas del carrusel = enlaces a su línea */
+a.pc{display:block;color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent;cursor:pointer}
+.pc-go{display:inline-flex;align-items:center;gap:8px;margin:14px 8px 0;font:700 14px var(--hf);font-style:normal;color:#d93216}
+.pc-go:after{content:"";width:18px;height:18px;border-radius:50%;background:#fff1ec url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d93216' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 12h10M13 7l5 5-5 5'/%3E%3C/svg%3E") center/12px no-repeat;transition:transform .25s}
+a.pc:hover .pc-go:after,a.pc:focus-visible .pc-go:after{transform:translateX(4px)}
+a.pc:focus-visible{outline:3px solid #ff5a32;outline-offset:3px}
+.line{scroll-margin-top:110px}#kortwell{scroll-margin-top:70px}
+.line:target{animation:tgt 1.8s ease-out}
+@keyframes tgt{0%,40%{box-shadow:0 0 0 4px rgba(255,90,50,.55),0 20px 50px rgba(255,90,50,.18)}100%{box-shadow:none}}

@@ -136,9 +136,11 @@ if(el&&tr){
  el.addEventListener('touchend',function(){hold=false;pos=el.scrollLeft;rest=Date.now()+1500},{passive:true});
  el.addEventListener('wheel',function(){rest=Date.now()+1500;pos=el.scrollLeft},{passive:true});
  el.addEventListener('scroll',function(){if(drag||hold)wrap()},{passive:true});
- el.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'||e.button)return;drag=true;sx=e.clientX;sp=el.scrollLeft;el.classList.add('drag');el.setPointerCapture(e.pointerId)});
- el.addEventListener('pointermove',function(e){if(!drag)return;el.scrollLeft=sp-(e.clientX-sx);wrap();sp=el.scrollLeft+(e.clientX-sx)});
- function end(){if(!drag)return;drag=false;el.classList.remove('drag');pos=el.scrollLeft;rest=Date.now()+1500}
+ var moved=false,pid=null,down=false;
+ el.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse'||e.button)return;down=true;moved=false;pid=e.pointerId;sx=e.clientX;sp=el.scrollLeft});
+ el.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(!moved){if(Math.abs(dx)<6)return;moved=true;drag=true;el.classList.add('drag');try{el.setPointerCapture(pid)}catch(_){}}el.scrollLeft=sp-dx;wrap();sp=el.scrollLeft+dx});
+ function end(){down=false;if(!drag)return;drag=false;el.classList.remove('drag');pos=el.scrollLeft;rest=Date.now()+1500}
+ el.addEventListener('click',function(e){if(moved){e.preventDefault();e.stopPropagation();moved=false}},true);
  el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
  if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(el);
  requestAnimationFrame(tick)}
