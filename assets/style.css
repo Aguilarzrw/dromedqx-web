@@ -394,3 +394,6 @@ header.h:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:3p
 .jr-n.n1{background:#ff4a2d}.jr-n.n2{background:#f46732}.jr-n.n3{background:#30b2aa}.jr-n.n4{background:#fff}
 @media(max-width:720px){.jr-svg{display:none}.jr-steps{grid-template-columns:1fr;gap:0;position:relative}.jr-steps:before{content:"";position:absolute;left:21px;top:22px;bottom:22px;border-left:3px dashed rgba(255,255,255,.28)}.jr-steps li{grid-template-columns:44px 1fr;column-gap:16px;text-align:left;justify-items:start;padding:10px 0;position:relative}.jr-n{display:grid;grid-row:1/3}.jr-steps p{max-width:none}.pc{width:240px}}
 @media(prefers-reduced-motion:reduce){.pc{transform:none}}
+
+/* la web tiene un solo diseño: evita el modo oscuro automático de algunos navegadores (p. ej. Xiaomi) */
+:root{color-scheme:only light}
