@@ -114,3 +114,6 @@ if(contactForm){
   });
 }
 })();
+/* pausa animaciones del hero fuera de pantalla */
+(function(){var m=document.querySelector('.mh'),s=m&&m.querySelector('svg.ov');if(!m||!('IntersectionObserver' in window))return;
+new IntersectionObserver(function(e){var on=e[0].isIntersecting;m.classList.toggle('off',!on);if(s&&s.pauseAnimations){on?s.unpauseAnimations():s.pauseAnimations()}}).observe(m)})();
