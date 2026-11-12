@@ -117,3 +117,6 @@ if(contactForm){
 /* pausa animaciones del hero fuera de pantalla */
 (function(){var m=document.querySelector('.mh'),s=m&&m.querySelector('svg.ov');if(!m||!('IntersectionObserver' in window))return;
 new IntersectionObserver(function(e){var on=e[0].isIntersecting;m.classList.toggle('off',!on);if(s&&s.pauseAnimations){on?s.unpauseAnimations():s.pauseAnimations()}}).observe(m)})();
+
+/* pausa carrusel y recorrido fuera de pantalla */
+(function(){if(!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){es.forEach(function(e){var t=e.target,on=e.isIntersecting;t.classList.toggle('off',!on);var s=t.querySelector('svg.jr-svg');if(s&&s.pauseAnimations){on?s.unpauseAnimations():s.pauseAnimations()}})});document.querySelectorAll('.pcar,.jr-sec').forEach(function(e){io.observe(e)})})();
